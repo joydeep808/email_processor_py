@@ -1,0 +1,5 @@
+# i have to create a pydentic model
+    * User Email Create request with validation 
+# Want to the request to the Redis email service
+# Scheduler will get specific messages and add in the rabbitmq queue
+# 

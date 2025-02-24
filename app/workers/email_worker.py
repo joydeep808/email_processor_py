@@ -15,21 +15,21 @@ class EmailWorker:
         self.email_service = email_service
         self.scheduler = AsyncIOScheduler()
 
-    async def process_email(self, email_data: dict):
+    def process_email(self, email_data: dict):
         try:
             # Attempt to send email
-            success = await self.email_service.send_email(email_data)
+            success = self.email_service.send_email(email_data)
             
             if success:
                 # Update status in Redis
-                await self.redis_service.update_email_status(
+                    self.redis_service.update_email_status(
                     email_data["id"],
                     "sent"
                 )
             else:
                 # Implement retry logic here
                 # For now, we'll just mark as failed
-               await self.redis_service.update_email_status(
+                self.redis_service.update_email_status(
                     email_data["id"],
                     "failed"
                 )

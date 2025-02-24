@@ -26,11 +26,10 @@ def get_redis_service():
 def create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):
     email_id = redis_service.save_email(email)
     return email_id
-@app.get("/")
+@app.get("/:email_id", response_model=EmailCreate)
 def get_email_status(email_id: int):
     email = get_email(email_id)
     return email
-
 
 @app.get("/emails/pending", response_model=List[dict])
 async def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):
@@ -52,13 +51,9 @@ async def process_pending_emails():
     channel.queue_declare(queue='email_service')
 
     for email in pending_emails:
-        # Add your email processing logic here
         print(f"Processing email: {email['recipient']}")
-        
         # Convert datetime fields to timestamps
         email['created_at'] = int(email['created_at'].timestamp())
-        if 'sent_at' in email and email['sent_at']:
-            email['sent_at'] = int(email['sent_at'].timestamp())
         
         # Publish message to RabbitMQ
         channel.basic_publish(
@@ -73,7 +68,7 @@ async def process_pending_emails():
 
 # Scheduler setup
 scheduler = AsyncIOScheduler()
-scheduler.add_job(process_pending_emails, 'interval', minutes=.2)
+scheduler.add_job(process_pending_emails, 'interval', minutes=.4)
 scheduler.start()
 
 # Ensure the scheduler is shut down properly when the application exits
@@ -97,5 +92,5 @@ def startup_event():
 #     await worker.start()
 
 
-# if __name__ == "main":
-#     start_listener()
+if __name__ == "main":
+    start_listener()

@@ -18,9 +18,9 @@ class Settings(BaseSettings):
         return f"postgresql://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_HOST}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
     
     # Redis
-    REDIS_HOST: str = "redis-15597.c264.ap-south-1-1.ec2.redns.redis-cloud.com:15597"
-    REDIS_PORT: int = 15597
-    REDIS_PASSWORD: str = "DeWLpLcMOOVsgFBlg99Mqfyd5tdqX5xl"
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    REDIS_PASSWORD: str = ""
     
     @property
     def REDIS_URL(self) -> str:
@@ -41,9 +41,9 @@ class Settings(BaseSettings):
     # SMTP Settings
     SMTP_HOST: str = "smtp.gmail.com"
     SMTP_PORT: int = 587
-    SMTP_USER: str = "Joydeep Debnath"
+    SMTP_USER: str = ""
     SMTP_PASSWORD: str = ""
-    SMTP_FROM_EMAIL: str = ""
+    SMTP_FROM_EMAIL: str = "Joydeep Debnath"
     SMTP_TLS: bool = True
     
     # API Settings

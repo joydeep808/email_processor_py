@@ -35,8 +35,8 @@ class Email(EmailBase, SQLModel, table=True):
     sent_at: Optional[datetime] = Field(default=None)
 
 from typing import Generator
-connect_args = {"check_same_thread": False}
-engine = create_engine("postgresql://postgres:postgres@localhost:5432/postgres", connect_args=connect_args)
+# connect_args = {"check_same_thread": False}
+engine = create_engine("postgresql://joydeep:joydeep122@localhost:5432/email_service")
 
 
 def create_db_and_tables():
@@ -45,17 +45,20 @@ def create_db_and_tables():
 def get_session():
     with Session(engine) as session:
         yield session
+
 SessionDep = Annotated[Session, Depends(get_session)]
 
-
-def save_email(email: EmailCreate, session: Session = Depends(get_session)):
+def save_email_in_db(email: EmailCreate):
+    session:SessionDep = next(get_session())
     db_email = Email(**email.dict())
-    session.add(db_email)
+
+    session.add(db_email , False)
     session.commit()
     session.refresh(db_email)
     return db_email
 
-def get_email(email_id: int, session: Session = Depends(get_session)):
+def get_email(email_id: int):
+    session:SessionDep = next(get_session())
     db_email = session.get(Email, email_id)
     if not db_email:
         raise HTTPException(status_code=404, detail="Email not found")

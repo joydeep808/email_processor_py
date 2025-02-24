@@ -556,6 +556,14 @@
         "documentation": {}
     },
     {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
         "label": "engine",
         "importPath": "app.model.connection",
         "description": "app.model.connection",
@@ -590,7 +598,7 @@
         "documentation": {}
     },
     {
-        "label": "save_email",
+        "label": "get_email",
         "importPath": "app.model.item",
         "description": "app.model.item",
         "isExtraImport": true,
@@ -598,7 +606,15 @@
         "documentation": {}
     },
     {
-        "label": "get_email",
+        "label": "save_email_in_db",
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "isExtraImport": true,
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
         "importPath": "app.model.item",
         "description": "app.model.item",
         "isExtraImport": true,
@@ -796,20 +812,11 @@
         "documentation": {}
     },
     {
-        "label": "send_email",
-        "kind": 2,
-        "importPath": "app.core.rabbit_listner",
-        "description": "app.core.rabbit_listner",
-        "peekOfCode": "def send_email(email_data: Dict) -> bool:\n        smtp = {\n            \"host\": settings.SMTP_HOST,\n            \"port\": settings.SMTP_PORT,\n            \"user\": \"Joydeep Debnath\",\n            \"password\": settings.SMTP_PASSWORD,\n            \"tls\": True\n        }\n        message = emails.Message(\n            subject=email_data[\"subject\"],",
-        "detail": "app.core.rabbit_listner",
-        "documentation": {}
-    },
-    {
         "label": "process_email",
         "kind": 2,
         "importPath": "app.core.rabbit_listner",
         "description": "app.core.rabbit_listner",
-        "peekOfCode": "def process_email(ch, method, properties, body):\n    email = json.loads(body)\n    print(f\"Processing email: {email['recipient']}\")\n    send_email(email)\n    # Acknowledge the message\n    ch.basic_ack(delivery_tag=method.delivery_tag)\ndef start_listener():\n    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))\n    channel = connection.channel()\n    channel.queue_declare(queue='email_service')",
+        "peekOfCode": "def process_email(ch, method, properties, body):\n    email = json.loads(body)\n    print(f\"Processing email: {email['recipient']}\")\n    EmailService().send_email(email)\n    # Acknowledge the message\n    ch.basic_ack(delivery_tag=method.delivery_tag)\ndef start_listener():\n    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))\n    channel = connection.channel()\n    channel.queue_declare(queue='email_service')",
         "detail": "app.core.rabbit_listner",
         "documentation": {}
     },
@@ -917,7 +924,7 @@
         "kind": 2,
         "importPath": "app.model.item",
         "description": "app.model.item",
-        "peekOfCode": "def create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()",
+        "peekOfCode": "def create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email_in_db(email: EmailCreate):\n    session:SessionDep = next(get_session())\n    db_email = Email(**email.dict())\n    session.add(db_email , False)",
         "detail": "app.model.item",
         "documentation": {}
     },
@@ -926,16 +933,16 @@
         "kind": 2,
         "importPath": "app.model.item",
         "description": "app.model.item",
-        "peekOfCode": "def get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()\n    session.refresh(db_email)\n    return db_email",
+        "peekOfCode": "def get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email_in_db(email: EmailCreate):\n    session:SessionDep = next(get_session())\n    db_email = Email(**email.dict())\n    session.add(db_email , False)\n    session.commit()\n    session.refresh(db_email)",
         "detail": "app.model.item",
         "documentation": {}
     },
     {
-        "label": "save_email",
+        "label": "save_email_in_db",
         "kind": 2,
         "importPath": "app.model.item",
         "description": "app.model.item",
-        "peekOfCode": "def save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()\n    session.refresh(db_email)\n    return db_email\ndef get_email(email_id: int, session: Session = Depends(get_session)):\n    db_email = session.get(Email, email_id)\n    if not db_email:\n        raise HTTPException(status_code=404, detail=\"Email not found\")",
+        "peekOfCode": "def save_email_in_db(email: EmailCreate):\n    session:SessionDep = next(get_session())\n    db_email = Email(**email.dict())\n    session.add(db_email , False)\n    session.commit()\n    session.refresh(db_email)\n    return db_email\ndef get_email(email_id: int):\n    session:SessionDep = next(get_session())\n    db_email = session.get(Email, email_id)",
         "detail": "app.model.item",
         "documentation": {}
     },
@@ -944,16 +951,7 @@
         "kind": 2,
         "importPath": "app.model.item",
         "description": "app.model.item",
-        "peekOfCode": "def get_email(email_id: int, session: Session = Depends(get_session)):\n    db_email = session.get(Email, email_id)\n    if not db_email:\n        raise HTTPException(status_code=404, detail=\"Email not found\")\n    return db_email",
-        "detail": "app.model.item",
-        "documentation": {}
-    },
-    {
-        "label": "connect_args",
-        "kind": 5,
-        "importPath": "app.model.item",
-        "description": "app.model.item",
-        "peekOfCode": "connect_args = {\"check_same_thread\": False}\nengine = create_engine(\"postgresql://postgres:postgres@localhost:5432/postgres\", connect_args=connect_args)\ndef create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())",
+        "peekOfCode": "def get_email(email_id: int):\n    session:SessionDep = next(get_session())\n    db_email = session.get(Email, email_id)\n    if not db_email:\n        raise HTTPException(status_code=404, detail=\"Email not found\")\n    return db_email",
         "detail": "app.model.item",
         "documentation": {}
     },
@@ -962,7 +960,7 @@
         "kind": 5,
         "importPath": "app.model.item",
         "description": "app.model.item",
-        "peekOfCode": "engine = create_engine(\"postgresql://postgres:postgres@localhost:5432/postgres\", connect_args=connect_args)\ndef create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)",
+        "peekOfCode": "engine = create_engine(\"postgresql://joydeep:joydeep122@localhost:5432/email_service\")\ndef create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email_in_db(email: EmailCreate):\n    session:SessionDep = next(get_session())\n    db_email = Email(**email.dict())",
         "detail": "app.model.item",
         "documentation": {}
     },
@@ -971,7 +969,7 @@
         "kind": 5,
         "importPath": "app.model.item",
         "description": "app.model.item",
-        "peekOfCode": "SessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()\n    session.refresh(db_email)\n    return db_email\ndef get_email(email_id: int, session: Session = Depends(get_session)):\n    db_email = session.get(Email, email_id)\n    if not db_email:",
+        "peekOfCode": "SessionDep = Annotated[Session, Depends(get_session)]\ndef save_email_in_db(email: EmailCreate):\n    session:SessionDep = next(get_session())\n    db_email = Email(**email.dict())\n    session.add(db_email , False)\n    session.commit()\n    session.refresh(db_email)\n    return db_email\ndef get_email(email_id: int):\n    session:SessionDep = next(get_session())",
         "detail": "app.model.item",
         "documentation": {}
     },
@@ -980,7 +978,7 @@
         "kind": 6,
         "importPath": "app.services.email_service",
         "description": "app.services.email_service",
-        "peekOfCode": "class EmailService:\n    def __init__(self):\n        self.smtp_settings = {\n            \"host\": settings.SMTP_HOST,\n            \"port\": settings.SMTP_PORT,\n            \"user\": settings.SMTP_USER,\n            \"password\": settings.SMTP_PASSWORD,\n            \"tls\": True\n        }\n    async def send_email(self, email_data: Dict) -> bool:",
+        "peekOfCode": "class EmailService:\n    def __init__(self):\n        self.smtp_settings = {\n            \"host\": settings.SMTP_HOST,\n            \"port\": settings.SMTP_PORT,\n            \"user\": settings.SMTP_USER,\n            \"password\": settings.SMTP_PASSWORD,\n            \"tls\": True\n        }\n    def send_email(self, email_data: Dict) -> bool:",
         "detail": "app.services.email_service",
         "documentation": {}
     },
@@ -998,7 +996,7 @@
         "kind": 6,
         "importPath": "app.services.redis_service",
         "description": "app.services.redis_service",
-        "peekOfCode": "class RedisService:\n    def __init__(self, redis_url: str):\n        self.redis = redis.from_url(redis_url, decode_responses=True)\n    def save_email(self, email: EmailCreate) -> str:\n        email_dict = email.model_dump()\n        email_dict[\"created_at\"] = datetime.utcnow().timestamp()\n        # Generate UUID and use it as the key\n        email_dict[\"id\"] = str(email_dict[\"id\"])\n        # Store the UUID in the hash\n        redis_key =f\"email:{str(email_dict['id'])}\"",
+        "peekOfCode": "class RedisService:\n    def __init__(self, redis_url: str):\n        self.redis = redis.from_url(redis_url, decode_responses=True)\n    def save_email(self, email: EmailCreate) -> str:\n        email_dict = email.model_dump()\n        email_dict[\"created_at\"] = datetime.utcnow().timestamp()\n        # Generate UUID and use it as the key\n        saved_data = save_email_in_db(email)\n        # Store the UUID in the hash\n        redis_key =f\"email:{saved_data.id}\"",
         "detail": "app.services.redis_service",
         "documentation": {}
     },
@@ -1097,7 +1095,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/\")\ndef get_email_status(email_id: int):\n    email = get_email(email_id)\n    return email",
+        "peekOfCode": "def get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/:email_id\", response_model=EmailCreate)\ndef get_email_status(email_id: int):\n    email = get_email(email_id)\n    return email",
         "detail": "main",
         "documentation": {}
     },
@@ -1106,7 +1104,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/\")\ndef get_email_status(email_id: int):\n    email = get_email(email_id)\n    return email\n@app.get(\"/emails/pending\", response_model=List[dict])\nasync def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):\n    pending_emails = await redis_service.get_pending_emails()",
+        "peekOfCode": "def create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/:email_id\", response_model=EmailCreate)\ndef get_email_status(email_id: int):\n    email = get_email(email_id)\n    return email\n@app.get(\"/emails/pending\", response_model=List[dict])\nasync def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):\n    pending_emails = await redis_service.get_pending_emails()",
         "detail": "main",
         "documentation": {}
     },
@@ -1133,7 +1131,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def startup_event():\n    create_db_and_tables()\n# async def main():\n#     worker = EmailWorker(\n#         RabbitMQService(settings.RABBITMQ_URL),\n#         RedisService(settings.REDIS_URL),\n#         EmailService()\n#     )\n#     await worker.start()\n# if __name__ == \"main\":",
+        "peekOfCode": "def startup_event():\n    create_db_and_tables()\n# async def main():\n#     worker = EmailWorker(\n#         RabbitMQService(settings.RABBITMQ_URL),\n#         RedisService(settings.REDIS_URL),\n#         EmailService()\n#     )\n#     await worker.start()\nif __name__ == \"main\":",
         "detail": "main",
         "documentation": {}
     },
@@ -1142,7 +1140,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI()\n# Dependency to get the Redis service\ndef get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/\")\ndef get_email_status(email_id: int):",
+        "peekOfCode": "app = FastAPI()\n# Dependency to get the Redis service\ndef get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/:email_id\", response_model=EmailCreate)\ndef get_email_status(email_id: int):",
         "detail": "main",
         "documentation": {}
     },
@@ -1151,7 +1149,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "scheduler = AsyncIOScheduler()\nscheduler.add_job(process_pending_emails, 'interval', minutes=.2)\nscheduler.start()\n# Ensure the scheduler is shut down properly when the application exits\n@app.on_event(\"shutdown\")\ndef shutdown_event():\n    scheduler.shutdown()\n@app.on_event(\"startup\")\ndef startup_event():\n    create_db_and_tables()",
+        "peekOfCode": "scheduler = AsyncIOScheduler()\nscheduler.add_job(process_pending_emails, 'interval', minutes=.4)\nscheduler.start()\n# Ensure the scheduler is shut down properly when the application exits\n@app.on_event(\"shutdown\")\ndef shutdown_event():\n    scheduler.shutdown()\n@app.on_event(\"startup\")\ndef startup_event():\n    create_db_and_tables()",
         "detail": "main",
         "documentation": {}
     }

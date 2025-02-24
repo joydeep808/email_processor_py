@@ -12,7 +12,8 @@ class EmailService:
             "tls": True
         }
 
-    async def send_email(self, email_data: Dict) -> bool:
+    
+    def send_email(self, email_data: Dict) -> bool:
         message = emails.Message(
             subject=email_data["subject"],
             html=email_data["body"],

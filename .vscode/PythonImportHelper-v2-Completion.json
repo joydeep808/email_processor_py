@@ -1,141 +1,5 @@
 [
     {
-        "label": "APIRouter",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Depends",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Depends",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "FastAPI",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Depends",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "RedisService",
-        "importPath": "app.services.redis_service",
-        "description": "app.services.redis_service",
-        "isExtraImport": true,
-        "detail": "app.services.redis_service",
-        "documentation": {}
-    },
-    {
-        "label": "RedisService",
-        "importPath": "app.services.redis_service",
-        "description": "app.services.redis_service",
-        "isExtraImport": true,
-        "detail": "app.services.redis_service",
-        "documentation": {}
-    },
-    {
-        "label": "RedisService",
-        "importPath": "app.services.redis_service",
-        "description": "app.services.redis_service",
-        "isExtraImport": true,
-        "detail": "app.services.redis_service",
-        "documentation": {}
-    },
-    {
-        "label": "RedisService",
-        "importPath": "app.services.redis_service",
-        "description": "app.services.redis_service",
-        "isExtraImport": true,
-        "detail": "app.services.redis_service",
-        "documentation": {}
-    },
-    {
-        "label": "RedisService",
-        "importPath": "app.services.redis_service",
-        "description": "app.services.redis_service",
-        "isExtraImport": true,
-        "detail": "app.services.redis_service",
-        "documentation": {}
-    },
-    {
-        "label": "RabbitMQService",
-        "importPath": "app.services.rabbit_service",
-        "description": "app.services.rabbit_service",
-        "isExtraImport": true,
-        "detail": "app.services.rabbit_service",
-        "documentation": {}
-    },
-    {
-        "label": "RabbitMQService",
-        "importPath": "app.services.rabbit_service",
-        "description": "app.services.rabbit_service",
-        "isExtraImport": true,
-        "detail": "app.services.rabbit_service",
-        "documentation": {}
-    },
-    {
-        "label": "RabbitMQService",
-        "importPath": "app.services.rabbit_service",
-        "description": "app.services.rabbit_service",
-        "isExtraImport": true,
-        "detail": "app.services.rabbit_service",
-        "documentation": {}
-    },
-    {
-        "label": "RabbitMQService",
-        "importPath": "app.services.rabbit_service",
-        "description": "app.services.rabbit_service",
-        "isExtraImport": true,
-        "detail": "app.services.rabbit_service",
-        "documentation": {}
-    },
-    {
-        "label": "RabbitMQService",
-        "importPath": "app.services.rabbit_service",
-        "description": "app.services.rabbit_service",
-        "isExtraImport": true,
-        "detail": "app.services.rabbit_service",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Generator",
         "importPath": "typing",
         "description": "typing",
@@ -176,6 +40,30 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Annotated",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Dict",
         "importPath": "typing",
         "description": "typing",
@@ -200,39 +88,71 @@
         "documentation": {}
     },
     {
-        "label": "EmailCreate",
-        "importPath": "app.model.email",
-        "description": "app.model.email",
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "app.model.email",
+        "detail": "fastapi",
         "documentation": {}
     },
     {
-        "label": "EmailResponse",
-        "importPath": "app.model.email",
-        "description": "app.model.email",
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "app.model.email",
+        "detail": "fastapi",
         "documentation": {}
     },
     {
-        "label": "EmailCreate",
-        "importPath": "app.model.email",
-        "description": "app.model.email",
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "app.model.email",
+        "detail": "fastapi",
         "documentation": {}
     },
     {
-        "label": "EmailCreate",
-        "importPath": "app.model.email",
-        "description": "app.model.email",
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "app.model.email",
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
         "documentation": {}
     },
     {
         "label": "Session",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
         "isExtraImport": true,
@@ -256,7 +176,55 @@
         "documentation": {}
     },
     {
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
         "label": "Field",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "SQLModel",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlmodel",
+        "description": "sqlmodel",
+        "isExtraImport": true,
+        "detail": "sqlmodel",
+        "documentation": {}
+    },
+    {
+        "label": "select",
         "importPath": "sqlmodel",
         "description": "sqlmodel",
         "isExtraImport": true,
@@ -325,6 +293,78 @@
         "description": "app.core.config",
         "isExtraImport": true,
         "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "RedisService",
+        "importPath": "app.services.redis_service",
+        "description": "app.services.redis_service",
+        "isExtraImport": true,
+        "detail": "app.services.redis_service",
+        "documentation": {}
+    },
+    {
+        "label": "RedisService",
+        "importPath": "app.services.redis_service",
+        "description": "app.services.redis_service",
+        "isExtraImport": true,
+        "detail": "app.services.redis_service",
+        "documentation": {}
+    },
+    {
+        "label": "RedisService",
+        "importPath": "app.services.redis_service",
+        "description": "app.services.redis_service",
+        "isExtraImport": true,
+        "detail": "app.services.redis_service",
+        "documentation": {}
+    },
+    {
+        "label": "RedisService",
+        "importPath": "app.services.redis_service",
+        "description": "app.services.redis_service",
+        "isExtraImport": true,
+        "detail": "app.services.redis_service",
+        "documentation": {}
+    },
+    {
+        "label": "RabbitMQService",
+        "importPath": "app.services.rabbit_service",
+        "description": "app.services.rabbit_service",
+        "isExtraImport": true,
+        "detail": "app.services.rabbit_service",
+        "documentation": {}
+    },
+    {
+        "label": "RabbitMQService",
+        "importPath": "app.services.rabbit_service",
+        "description": "app.services.rabbit_service",
+        "isExtraImport": true,
+        "detail": "app.services.rabbit_service",
+        "documentation": {}
+    },
+    {
+        "label": "RabbitMQService",
+        "importPath": "app.services.rabbit_service",
+        "description": "app.services.rabbit_service",
+        "isExtraImport": true,
+        "detail": "app.services.rabbit_service",
+        "documentation": {}
+    },
+    {
+        "label": "RabbitMQService",
+        "importPath": "app.services.rabbit_service",
+        "description": "app.services.rabbit_service",
+        "isExtraImport": true,
+        "detail": "app.services.rabbit_service",
         "documentation": {}
     },
     {
@@ -452,6 +492,30 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "BaseModel",
         "importPath": "pydantic",
         "description": "pydantic",
@@ -492,6 +556,14 @@
         "documentation": {}
     },
     {
+        "label": "engine",
+        "importPath": "app.model.connection",
+        "description": "app.model.connection",
+        "isExtraImport": true,
+        "detail": "app.model.connection",
+        "documentation": {}
+    },
+    {
         "label": "aio_pika",
         "kind": 6,
         "isExtraImport": true,
@@ -507,6 +579,54 @@
         "importPath": "redis",
         "description": "redis",
         "detail": "redis",
+        "documentation": {}
+    },
+    {
+        "label": "EmailCreate",
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "isExtraImport": true,
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "save_email",
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "isExtraImport": true,
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "get_email",
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "isExtraImport": true,
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "create_db_and_tables",
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "isExtraImport": true,
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "EmailCreate",
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "isExtraImport": true,
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "get_email",
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "isExtraImport": true,
+        "detail": "app.model.item",
         "documentation": {}
     },
     {
@@ -586,15 +706,6 @@
         "documentation": {}
     },
     {
-        "label": "router",
-        "kind": 5,
-        "importPath": "app.api.endpoints.email",
-        "description": "app.api.endpoints.email",
-        "peekOfCode": "router = APIRouter()\n@router.post(\"/email/\", response_model=EmailResponse)\nasync def create_email(\n    email: EmailCreate,\n    redis_service: RedisService = Depends(),\n    rabbit_service: RabbitMQService = Depends()\n):\n    # Save to Redis\n    email_id = int(redis_service.save_email(email))\n    # Publish to RabbitMQ",
-        "detail": "app.api.endpoints.email",
-        "documentation": {}
-    },
-    {
         "label": "get_db",
         "kind": 2,
         "importPath": "app.api.deps",
@@ -662,7 +773,7 @@
         "kind": 6,
         "importPath": "app.core.config",
         "description": "app.core.config",
-        "peekOfCode": "class Settings(BaseSettings):\n    # PostgreSQL Database\n    POSTGRES_USER: str = \"joydeep\"\n    POSTGRES_PASSWORD: str = \"joydeep122\"\n    POSTGRES_HOST: str = \"localhost\"\n    POSTGRES_PORT: str = \"5432\"\n    POSTGRES_DB: str = \"email_service\"\n    DATABASE_URL: Optional[str] = None\n    @property\n    def SQLALCHEMY_DATABASE_URI(self) -> str:",
+        "peekOfCode": "class Settings(BaseSettings):\n    # PostgreSQL Database\n    POSTGRES_USER: str = \"joydeep\"\n    POSTGRES_PASSWORD: str = \"joydeep122\"\n    POSTGRES_HOST: str = \"localhost\"\n    POSTGRES_PORT: int = 5432\n    POSTGRES_DB: str = \"email_service\"\n    DATABASE_URL: Optional[str] = None\n    @property\n    def SQLALCHEMY_DATABASE_URI(self) -> str:",
         "detail": "app.core.config",
         "documentation": {}
     },
@@ -712,6 +823,24 @@
         "documentation": {}
     },
     {
+        "label": "DATABASE_URL",
+        "kind": 5,
+        "importPath": "app.model.connection",
+        "description": "app.model.connection",
+        "peekOfCode": "DATABASE_URL = f\"postgresql://{settings.POSTGRES_USER}:{settings.POSTGRES_PASSWORD}@{settings.POSTGRES_HOST}:{settings.POSTGRES_PORT}/{settings.POSTGRES_DB}\"\n# Create the SQLAlchemy engine to interact with the PostgreSQL database\nengine = create_engine(DATABASE_URL)\n# If you want to create tables (if they don't exist already), you can use:\nSQLModel.metadata.create_all(engine)",
+        "detail": "app.model.connection",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "app.model.connection",
+        "description": "app.model.connection",
+        "peekOfCode": "engine = create_engine(DATABASE_URL)\n# If you want to create tables (if they don't exist already), you can use:\nSQLModel.metadata.create_all(engine)",
+        "detail": "app.model.connection",
+        "documentation": {}
+    },
+    {
         "label": "EmailBase",
         "kind": 6,
         "importPath": "app.model.email",
@@ -745,6 +874,105 @@
         "description": "app.model.email",
         "peekOfCode": "class EmailResponse(EmailBase):\n    pass",
         "detail": "app.model.email",
+        "documentation": {}
+    },
+    {
+        "label": "EmailBase",
+        "kind": 6,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "class EmailBase(BaseModel):\n    recipient: EmailStr  # Using EmailStr for email validation\n    subject: str\n    body: str\n    status: str\n    created_at: datetime\n    sent_at: Optional[datetime] = None\nclass EmailCreate(BaseModel):\n    recipient: EmailStr\n    subject: str",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "EmailCreate",
+        "kind": 6,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "class EmailCreate(BaseModel):\n    recipient: EmailStr\n    subject: str\n    body: str\nclass EmailUpdate(BaseModel):\n    recipient: Optional[EmailStr] = None\n    subject: Optional[str] = None\n    body: Optional[str] = None\nclass Email(EmailBase, SQLModel, table=True):\n    __tablename__ = \"emails\"  # type: ignore # Explicitly define table name",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "EmailUpdate",
+        "kind": 6,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "class EmailUpdate(BaseModel):\n    recipient: Optional[EmailStr] = None\n    subject: Optional[str] = None\n    body: Optional[str] = None\nclass Email(EmailBase, SQLModel, table=True):\n    __tablename__ = \"emails\"  # type: ignore # Explicitly define table name\n    id: int = Field(default=None, primary_key=True)\n    recipient: str = Field(..., index=True)  # Index email field for faster queries\n    subject: str = Field(...)\n    body: str = Field(...)",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "Email",
+        "kind": 6,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "class Email(EmailBase, SQLModel, table=True):\n    __tablename__ = \"emails\"  # type: ignore # Explicitly define table name\n    id: int = Field(default=None, primary_key=True)\n    recipient: str = Field(..., index=True)  # Index email field for faster queries\n    subject: str = Field(...)\n    body: str = Field(...)\n    status: str = Field(default=\"pending\")\n    created_at: datetime = Field(default_factory=datetime.utcnow)\n    sent_at: Optional[datetime] = Field(default=None)\nfrom typing import Generator",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "create_db_and_tables",
+        "kind": 2,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "def create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "get_session",
+        "kind": 2,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "def get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()\n    session.refresh(db_email)\n    return db_email",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "save_email",
+        "kind": 2,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "def save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()\n    session.refresh(db_email)\n    return db_email\ndef get_email(email_id: int, session: Session = Depends(get_session)):\n    db_email = session.get(Email, email_id)\n    if not db_email:\n        raise HTTPException(status_code=404, detail=\"Email not found\")",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "get_email",
+        "kind": 2,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "def get_email(email_id: int, session: Session = Depends(get_session)):\n    db_email = session.get(Email, email_id)\n    if not db_email:\n        raise HTTPException(status_code=404, detail=\"Email not found\")\n    return db_email",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "connect_args",
+        "kind": 5,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "connect_args = {\"check_same_thread\": False}\nengine = create_engine(\"postgresql://postgres:postgres@localhost:5432/postgres\", connect_args=connect_args)\ndef create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "engine = create_engine(\"postgresql://postgres:postgres@localhost:5432/postgres\", connect_args=connect_args)\ndef create_db_and_tables():\n    SQLModel.metadata.create_all(engine)\ndef get_session():\n    with Session(engine) as session:\n        yield session\nSessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)",
+        "detail": "app.model.item",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "kind": 5,
+        "importPath": "app.model.item",
+        "description": "app.model.item",
+        "peekOfCode": "SessionDep = Annotated[Session, Depends(get_session)]\ndef save_email(email: EmailCreate, session: Session = Depends(get_session)):\n    db_email = Email(**email.dict())\n    session.add(db_email)\n    session.commit()\n    session.refresh(db_email)\n    return db_email\ndef get_email(email_id: int, session: Session = Depends(get_session)):\n    db_email = session.get(Email, email_id)\n    if not db_email:",
+        "detail": "app.model.item",
         "documentation": {}
     },
     {
@@ -869,7 +1097,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/emails/pending\", response_model=List[dict])\nasync def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):\n    pending_emails = await redis_service.get_pending_emails()\n    return pending_emails",
+        "peekOfCode": "def get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/\")\ndef get_email_status(email_id: int):\n    email = get_email(email_id)\n    return email",
         "detail": "main",
         "documentation": {}
     },
@@ -878,7 +1106,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/emails/pending\", response_model=List[dict])\nasync def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):\n    pending_emails = await redis_service.get_pending_emails()\n    return pending_emails\n# Models for request bodies\nclass EmailUpdate(BaseModel):\n    status: str",
+        "peekOfCode": "def create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/\")\ndef get_email_status(email_id: int):\n    email = get_email(email_id)\n    return email\n@app.get(\"/emails/pending\", response_model=List[dict])\nasync def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):\n    pending_emails = await redis_service.get_pending_emails()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_email_status",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_email_status(email_id: int):\n    email = get_email(email_id)\n    return email\n@app.get(\"/emails/pending\", response_model=List[dict])\nasync def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):\n    pending_emails = await redis_service.get_pending_emails()\n    return pending_emails\n# Models for request bodies\nclass EmailUpdate(BaseModel):\n    status: str",
         "detail": "main",
         "documentation": {}
     },
@@ -887,7 +1124,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def shutdown_event():\n    scheduler.shutdown()\n# async def main():\n#     worker = EmailWorker(\n#         RabbitMQService(settings.RABBITMQ_URL),\n#         RedisService(settings.REDIS_URL),\n#         EmailService()\n#     )\n#     await worker.start()\nif __name__ == \"main\":",
+        "peekOfCode": "def shutdown_event():\n    scheduler.shutdown()\n@app.on_event(\"startup\")\ndef startup_event():\n    create_db_and_tables()\n# async def main():\n#     worker = EmailWorker(\n#         RabbitMQService(settings.RABBITMQ_URL),\n#         RedisService(settings.REDIS_URL),\n#         EmailService()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "startup_event",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def startup_event():\n    create_db_and_tables()\n# async def main():\n#     worker = EmailWorker(\n#         RabbitMQService(settings.RABBITMQ_URL),\n#         RedisService(settings.REDIS_URL),\n#         EmailService()\n#     )\n#     await worker.start()\n# if __name__ == \"main\":",
         "detail": "main",
         "documentation": {}
     },
@@ -896,7 +1142,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI()\n# Dependency to get the Redis service\ndef get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/emails/pending\", response_model=List[dict])\nasync def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):",
+        "peekOfCode": "app = FastAPI()\n# Dependency to get the Redis service\ndef get_redis_service():\n    return RedisService(redis_url=\"redis://localhost:6379\")\n@app.post(\"/emails/\", response_model=str)\ndef create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):\n    email_id = redis_service.save_email(email)\n    return email_id\n@app.get(\"/\")\ndef get_email_status(email_id: int):",
         "detail": "main",
         "documentation": {}
     },
@@ -905,7 +1151,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "scheduler = AsyncIOScheduler()\nscheduler.add_job(process_pending_emails, 'interval', minutes=.2)\nscheduler.start()\n# Ensure the scheduler is shut down properly when the application exits\n@app.on_event(\"shutdown\")\ndef shutdown_event():\n    scheduler.shutdown()\n# async def main():\n#     worker = EmailWorker(\n#         RabbitMQService(settings.RABBITMQ_URL),",
+        "peekOfCode": "scheduler = AsyncIOScheduler()\nscheduler.add_job(process_pending_emails, 'interval', minutes=.2)\nscheduler.start()\n# Ensure the scheduler is shut down properly when the application exits\n@app.on_event(\"shutdown\")\ndef shutdown_event():\n    scheduler.shutdown()\n@app.on_event(\"startup\")\ndef startup_event():\n    create_db_and_tables()",
         "detail": "main",
         "documentation": {}
     }

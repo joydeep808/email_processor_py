@@ -21,3 +21,4 @@ class EmailCreate(EmailBase):
 
 class EmailResponse(EmailBase):
     pass
+

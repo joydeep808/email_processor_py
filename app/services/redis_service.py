@@ -1,7 +1,8 @@
 import json
 from datetime import datetime
 import redis
-from app.model.email import EmailCreate
+# from app.model.email import EmailCreate
+from app.model.item import EmailCreate, save_email , get_email
 
 class RedisService:
     def __init__(self, redis_url: str):
@@ -14,7 +15,9 @@ class RedisService:
         email_dict["id"] = str(email_dict["id"])
         # Store the UUID in the hash
         redis_key =f"email:{str(email_dict['id'])}"
+        Email_Service().save_email(email=email_dict) # type: ignore
         self.redis.hset(redis_key, mapping=email_dict)
+        save_email(email)
         return redis_key
     
     async def get_pending_emails(self):
@@ -46,3 +49,4 @@ class RedisService:
     
     def delete_email(self, email_id: str):
         self.redis.delete(email_id)
+        

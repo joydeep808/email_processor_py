@@ -2,7 +2,7 @@ from fastapi import FastAPI, Depends
 from pydantic import BaseModel
 from typing import List
 from app.services.redis_service import RedisService
-from app.model.email import EmailCreate
+
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import pika
 import json
@@ -13,6 +13,8 @@ from app.services.rabbit_service import RabbitMQService
 from app.services.email_service import EmailService
 from app.core.config import settings
 from app.core.rabbit_listner import start_listener
+from app.model.item import create_db_and_tables
+from app.model.item import EmailCreate , get_email
 
 app = FastAPI()
 
@@ -24,6 +26,11 @@ def get_redis_service():
 def create_email(email: EmailCreate, redis_service: RedisService = Depends(get_redis_service)):
     email_id = redis_service.save_email(email)
     return email_id
+@app.get("/")
+def get_email_status(email_id: int):
+    email = get_email(email_id)
+    return email
+
 
 @app.get("/emails/pending", response_model=List[dict])
 async def get_pending_emails(redis_service: RedisService = Depends(get_redis_service)):
@@ -74,6 +81,13 @@ scheduler.start()
 def shutdown_event():
     scheduler.shutdown()
 
+
+@app.on_event("startup")
+def startup_event():
+    create_db_and_tables()
+
+
+
 # async def main():
 #     worker = EmailWorker(
 #         RabbitMQService(settings.RABBITMQ_URL),
@@ -83,5 +97,5 @@ def shutdown_event():
 #     await worker.start()
 
 
-if __name__ == "main":
-    start_listener()
+# if __name__ == "main":
+#     start_listener()

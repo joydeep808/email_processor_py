@@ -41,9 +41,9 @@ class Settings(BaseSettings):
     # SMTP Settings
     SMTP_HOST: str = "smtp.gmail.com"
     SMTP_PORT: int = 587
-    SMTP_USER: str = ""
+    SMTP_USER: str = "fakegamil32@gmail.com"
     SMTP_PASSWORD: str = ""
-    SMTP_FROM_EMAIL: str = "Joydeep Debnath"
+    SMTP_FROM_EMAIL: str = "fakegamil32@gmail.com"
     SMTP_TLS: bool = True
     
     # API Settings

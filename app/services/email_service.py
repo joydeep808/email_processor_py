@@ -1,7 +1,7 @@
 import emails
 from typing import Dict
 from app.core.config import settings
-
+from email.utils import formataddr
 class EmailService:
     def __init__(self):
         self.smtp_settings = {
@@ -17,7 +17,7 @@ class EmailService:
         message = emails.Message(
             subject=email_data["subject"],
             html=email_data["body"],
-            mail_from=settings.SMTP_FROM_EMAIL
+            mail_from = formataddr(("Joydeep Debnath", settings.SMTP_FROM_EMAIL))
         )
 
         response = message.send(

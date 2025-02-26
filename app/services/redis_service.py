@@ -2,12 +2,13 @@ import json
 from datetime import datetime
 import redis
 # from app.model.email import EmailCreate
-from app.model.item import EmailCreate, get_email, save_email_in_db, SessionDep
+from app.model.email_db import EmailCreate, get_email, save_email_in_db, SessionDep
 from  uuid import uuid4 
+from app.core.config import settings
 
 class RedisService:
-    def __init__(self, redis_url: str):
-        self.redis = redis.from_url(redis_url, decode_responses=True)
+    def __init__(self):
+        self.redis = redis.from_url(settings.REDIS_URL, decode_responses=True)
     
     def save_email(self, email: EmailCreate) -> str:
         email_dict = email.model_dump()
@@ -20,7 +21,7 @@ class RedisService:
         self.redis.hset(redis_key, mapping=email_dict)
         return redis_key
 
-    async def get_pending_emails(self):
+    def get_pending_emails(self):
         keys = self.redis.keys("email:*")
         if not keys:
             return []

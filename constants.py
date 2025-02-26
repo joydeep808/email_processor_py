@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class EMAIL_STATUS(Enum):
     SENT = "SENT"
     PENDING = "PENDING"
@@ -15,3 +16,5 @@ PROCESSING_EMAILS = "processing_emails"
 FAILED_EMAILS = "failed_emails"
 BATCH_SIZE = 10
 SCHEDULER_INTERVAL_SECONDS = 60
+
+

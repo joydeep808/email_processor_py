@@ -1,9 +1,7 @@
-import json
 from datetime import datetime
 import redis
 # from app.model.email import EmailCreate
 from app.model.email_db import EmailCreate, get_email, save_email_in_db, SessionDep
-from  uuid import uuid4 
 from app.core.config import settings
 
 class RedisService:

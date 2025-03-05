@@ -1,9 +1,7 @@
 import asyncio
 import json
 import pika 
-from typing import Dict
 from app.services.email_service import EmailService
-import threading
 from app.model.email_db import update_record_by_id
 def process_email(ch, method, _, body):
     email = json.loads(body)

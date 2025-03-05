@@ -751,7 +751,7 @@
         "kind": 6,
         "importPath": "app.core.config",
         "description": "app.core.config",
-        "peekOfCode": "class Settings(BaseSettings):\n    # PostgreSQL Database\n    POSTGRES_USER: str = \"joydeep\"\n    POSTGRES_PASSWORD: str = \"joydeep122\"\n    POSTGRES_HOST: str = \"localhost\"\n    POSTGRES_PORT: int = 5432\n    POSTGRES_DB: str = \"email_service\"\n    DATABASE_URL: Optional[str] = None\n    @property\n    def SQLALCHEMY_DATABASE_URI(self) -> str:",
+        "peekOfCode": "class Settings(BaseSettings):\n    # PostgreSQL Database\n    POSTGRES_USER: str = \"\"\n    POSTGRES_PASSWORD: str = \"\"\n    POSTGRES_HOST: str = \"\"\n    POSTGRES_PORT: int = 5432\n    POSTGRES_DB: str = \"\"\n    DATABASE_URL: Optional[str] = None\n    @property\n    def SQLALCHEMY_DATABASE_URI(self) -> str:",
         "detail": "app.core.config",
         "documentation": {}
     },
